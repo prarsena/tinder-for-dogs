@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f4ed">
+    <title>pupmeet — good dogs, good company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="pupmeet home">
+        <span class="brand-mark" aria-hidden="true">p</span>
+        <span>pupmeet<span class="brand-period">.</span></span>
+      </a>
+      <div class="topbar-right">
+        <div class="location-pill"><span class="location-dot"></span> Brooklyn, NY <span class="chevron">⌄</span></div>
+        <button class="profile-button" aria-label="Your profile">A</button>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> A better kind of meet-cute</p>
+          <h1>Good dogs.<br><span>Great company.</span></h1>
+          <p class="welcome-copy">Meet your new favorite walking buddy, one wag at a time.</p>
+        </div>
+        <div class="neighborhood-note"><span class="note-icon" aria-hidden="true">✳</span><span>Finding your pack<br><strong>close to home</strong></span></div>
+      </section>
+
+      <div class="content-grid">
+        <section class="discover" aria-label="Discover dogs">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">YOUR DAILY DOSE OF CUTE</span>
+              <h2>Meet the locals <span id="remaining-count" class="count-pill">8</span></h2>
+            </div>
+            <button class="filter-button" type="button" aria-label="Filters">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10m-7 5h4" /></svg>
+              <span>Filters</span>
+            </button>
+          </div>
+
+          <div class="card-wrap">
+            <article id="dog-card" class="dog-card" aria-live="polite">
+              <img id="dog-photo" class="dog-photo" alt="">
+              <div class="card-shade"></div>
+              <div class="card-topline">
+                <span class="new-badge"><span class="sparkle">✦</span> NEW AROUND HERE</span>
+                <button class="save-button" type="button" aria-label="Save profile" title="Save profile">♡</button>
+              </div>
+              <div class="dog-info">
+                <div class="name-row">
+                  <h3 id="dog-name">Finding your next best friend…</h3>
+                  <span class="verified" aria-label="Verified profile">✓</span>
+                </div>
+                <p id="dog-meta" class="dog-meta"></p>
+                <p id="dog-distance" class="dog-distance"></p>
+                <p id="dog-bio" class="dog-bio"></p>
+              </div>
+            </article>
+            <div class="card-shadow card-shadow-back"></div>
+            <div class="card-shadow card-shadow-front"></div>
+          </div>
+
+          <div id="dog-tags" class="tag-row" aria-label="Dog personality traits"></div>
+          <div class="swipe-actions">
+            <button id="pass-button" class="swipe-button pass-button" type="button" aria-label="Pass on this dog">
+              <span class="action-icon">×</span><span class="action-label">Pass</span>
+            </button>
+            <p class="swipe-hint">A little hello goes a long way</p>
+            <button id="like-button" class="swipe-button like-button" type="button" aria-label="Like this dog">
+              <span class="action-icon">♥</span><span class="action-label">Say hello</span>
+            </button>
+          </div>
+          <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <aside class="pack-panel" aria-label="Your matches">
+          <div class="pack-heading">
+            <div>
+              <span class="section-kicker">THE GOOD STUFF</span>
+              <h2>Your pack <span id="match-count" class="count-pill count-pill-pink">0</span></h2>
+            </div>
+            <span class="pack-heart" aria-hidden="true">♡</span>
+          </div>
+          <div id="matches-list" class="matches-list">
+            <div class="empty-matches">
+              <span class="empty-paw" aria-hidden="true">🐾</span>
+              <p>Your new besties<br>will show up here.</p>
+              <span>Keep saying hello!</span>
+            </div>
+          </div>
+          <div class="pack-footer">
+            <span class="online-dot"></span>
+            <span>Fresh faces added every week</span>
+          </div>
+        </aside>
+      </div>
+      <footer class="footer-note"><span>Made for the love of dogs</span><span class="footer-heart">♥</span><span>Not a dating app for humans. Obviously.</span></footer>
+    </main>
+
+    <dialog id="match-dialog" class="match-dialog">
+      <button id="close-match" class="dialog-close" type="button" aria-label="Close">×</button>
+      <div class="match-confetti" aria-hidden="true">✦ &nbsp; ♥ &nbsp; ✦</div>
+      <div class="match-avatar-wrap"><img id="match-photo" alt=""></div>
+      <p class="dialog-kicker">IT'S A MATCH!</p>
+      <h2 id="match-title">You and Luna like each other</h2>
+      <p class="dialog-copy">Looks like you've found a new walking buddy. Let the sniffing adventures begin.</p>
+      <button id="keep-browsing" class="dialog-button" type="button">Keep meeting pups</button>
+    </dialog>
+  </body>
+</html>
