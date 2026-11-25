@@ -1,4 +1,4 @@
-# pupmeet
+# puppin' up
 
 A small Flask demo for meeting nearby dogs. Browse profiles, pass or say hello, and collect reciprocal likes in your pack.
 
